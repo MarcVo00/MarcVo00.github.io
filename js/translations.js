@@ -37,7 +37,7 @@ const T = {
     "spot2.desc":      "Une expérience HTML qui intègre un petit modèle de langage directement dans la page — mi-maquette UI, mi-banc d&rsquo;essai d&rsquo;inférence locale.",
     "spot2.link":      "Dépôt",
     "spot3.tag":       "En ligne / 2024",
-    "spot3.desc":      "Le projet le plus volumineux de l&rsquo;archive. Un outil de sélection de méthodologie pour la gestion de projet — le seul dépôt actuellement déployé sur le web.",
+    "spot3.desc":      "Le projet le plus volumineux de l&rsquo;archive. Un outil de sélection de méthodologie pour la gestion de projet.",
     "spot3.link.repo": "Dépôt",
     "spot3.link.live": "En ligne",
 
