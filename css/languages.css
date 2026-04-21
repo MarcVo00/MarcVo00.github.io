@@ -1,0 +1,64 @@
+/* ================================================================
+   languages.css — language breakdown bars (section 003)
+================================================================ */
+
+.lang-grid {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.lang-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 1fr 140px;
+  gap: 20px;
+  padding: 24px 4px;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  transition: background .3s ease;
+}
+.lang-row:last-child { border-bottom: 0; }
+.lang-row:hover { background: color-mix(in srgb, var(--amber) 6%, transparent); }
+
+.lang-idx {
+  font-size: 11px;
+  color: var(--ink-faint);
+  letter-spacing: 0.1em;
+}
+
+.lang-name {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(22px, 3vw, 36px);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.lang-bar {
+  position: relative;
+  height: 4px;
+  background: var(--line);
+  overflow: hidden;
+}
+.lang-bar-fill {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 0;
+  animation: grow 1.2s cubic-bezier(.2,.7,.2,1) forwards;
+}
+
+.lang-count {
+  font-size: 12px;
+  color: var(--ink-dim);
+  text-align: right;
+}
+.lang-pct {
+  font-size: 11px;
+  color: var(--amber);
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 720px) {
+  .lang-row { grid-template-columns: 40px 1fr 100px; }
+  .lang-bar { display: none; }
+}

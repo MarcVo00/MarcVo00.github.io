@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Marc Vo — Index of Work</title>
-  <meta name="description" content="MarcVo — a working archive of code, experiments and agents. Pulled live from github.com/MarcVo00." />
+  <title>Marc Vo</title>
+  <meta name="description" content="Marc Vo — a working archive of code, experiments and agents." />
   <meta name="color-scheme" content="dark" />
   <meta property="og:title"       content="Marc Vo — Index of Work" />
   <meta property="og:description" content="A working archive of code, experiments, and agents in progress." />
@@ -16,7 +16,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,30..100,0..1;1,9..144,300..900,30..100,0..1&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/spotlight.css" />
+  <link rel="stylesheet" href="css/languages.css" />
+  <link rel="stylesheet" href="css/archive.css" />
+  <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/footer.css" />
 </head>
 <body>
 
@@ -28,13 +36,17 @@
     <a href="#top" class="brand" aria-label="Home">m<em>v</em></a>
 
     <div class="navlinks">
-      <a href="#work">Work</a>
-      <a href="#stack">Stack</a>
-      <a href="#archive">Archive</a>
-      <a href="#about">About</a>
+      <a href="#work"    data-i18n="nav.work">Work</a>
+      <a href="#stack"   data-i18n="nav.stack">Stack</a>
+      <a href="#archive" data-i18n="nav.archive">Archive</a>
+      <a href="#about"   data-i18n="nav.about">About</a>
     </div>
 
     <div class="nav-meta">
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button class="lang-btn" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
       <span class="dot" aria-hidden="true"></span>
       <span id="now" aria-live="off">—</span>
     </div>
@@ -45,34 +57,36 @@
      HERO
 ============================================================ -->
 <header id="top" class="hero wrap">
-  <div class="eyebrow">Index &mdash; 001 &mdash; Portfolio of Marc Vo</div>
+  <div class="eyebrow" data-i18n="hero.eyebrow">Index &mdash; 001 &mdash; Portfolio of Marc Vo</div>
 
   <div class="hero-grid">
-
     <div>
-      <h1 class="hero-title">
-        Building<br />
-        <span class="italic">quiet</span> things<br />
-        that <span class="italic">think.</span>
+      <h1 class="hero-title" data-i18n="hero.title">
+        Building<br /><span class="italic">quiet</span> things<br />that <span class="italic">think.</span>
       </h1>
 
       <dl class="hero-sub">
-        <dt>Working from</dt>
-        <dd>Switzerland &middot; HEG alumnus</dd>
-        <dt>Currently</dt>
-        <dd>Writing small <em style="color:var(--amber); font-style:italic">agents</em> that watch markets &amp; model pages.</dd>
-        <dt>Languages</dt>
+        <dt data-i18n="hero.label.from">Working from</dt>
+        <dd data-i18n="hero.val.from">Switzerland &middot; HEG alumnus</dd>
+
+        <dt data-i18n="hero.label.current">Currently</dt>
+        <dd data-i18n="hero.val.current">Writing small <em style="color:var(--amber);font-style:italic">agents</em> that watch markets &amp; model pages.</dd>
+
+        <dt data-i18n="hero.label.langs">Languages</dt>
         <dd>Python &middot; TypeScript &middot; JavaScript &middot; HTML</dd>
-        <dt>Catalogue</dt>
+
+        <dt data-i18n="hero.label.catalogue">Catalogue</dt>
         <dd><a href="https://github.com/MarcVo00" target="_blank" rel="noopener">github.com/MarcVo00 &#x2197;</a></dd>
       </dl>
 
       <div class="btn-row">
         <a class="btn primary" href="#work">
-          See recent work <span class="arrow">&rarr;</span>
+          <span data-i18n="hero.btn.work">See recent work</span>
+          <span class="arrow">&rarr;</span>
         </a>
         <a class="btn" href="https://github.com/MarcVo00" target="_blank" rel="noopener">
-          Open on GitHub <span class="arrow">&#x2197;</span>
+          <span data-i18n="hero.btn.github">Open on GitHub</span>
+          <span class="arrow">&#x2197;</span>
         </a>
       </div>
     </div>
@@ -81,34 +95,31 @@
       <div class="avatar-row">
         <div class="avatar">
           <img src="https://avatars.githubusercontent.com/u/71267198?v=4"
-               alt="MarcVo avatar"
-               loading="eager"
-               width="88" height="88" />
+               alt="MarcVo avatar" loading="eager" width="88" height="88" />
         </div>
         <div class="id-block">
           <div><span class="key">handle &rarr;</span> <span class="val">@MarcVo00</span></div>
           <div><span class="key">name &nbsp;&nbsp;&rarr;</span> <span class="val">Marc Vo</span></div>
           <div><span class="key">joined &rarr;</span> <span class="val">Sep 2020</span></div>
-          <div><span class="key">status &rarr;</span> <span class="accent">// shipping</span></div>
+          <div><span class="key">status &rarr;</span> <span class="accent" data-i18n="hero.status">// shipping</span></div>
         </div>
       </div>
 
       <div class="status-bar">
         <div class="cell">
           <span class="n">10</span>
-          <span class="label">Public repos</span>
+          <span class="label" data-i18n="hero.stat.repos">Public repos</span>
         </div>
         <div class="cell">
           <span class="n">4</span>
-          <span class="label">Languages</span>
+          <span class="label" data-i18n="hero.stat.langs">Languages</span>
         </div>
         <div class="cell">
           <span class="n">5+</span>
-          <span class="label">Years coding</span>
+          <span class="label" data-i18n="hero.stat.years">Years coding</span>
         </div>
       </div>
     </aside>
-
   </div>
 </header>
 
@@ -123,154 +134,118 @@
 </div>
 
 <!-- ============================================================
-     SPOTLIGHT
+     002 — SPOTLIGHT
 ============================================================ -->
 <section id="work" class="section wrap">
   <div class="section-head reveal">
-    <div class="section-index"><span class="num">002</span> Spotlight</div>
+    <div class="section-index" data-i18n="s002.index"><span class="num">002</span> Spotlight</div>
     <div>
-      <h2 class="section-title">
-        Three recent <span class="italic">experiments</span>
-      </h2>
-      <p class="section-lede">
-        The last few weeks have been a run of small, AI-adjacent prototypes. A
-        stock-watching agent, a Gemma-powered web experiment, and a working
-        methodology app &mdash; the only one deployed to the open web.
-      </p>
+      <h2 class="section-title" data-i18n="s002.title">Three recent <span class="italic">experiments</span></h2>
+      <p class="section-lede" data-i18n="s002.lede">The last few weeks have been a run of small, AI-adjacent prototypes.</p>
     </div>
   </div>
 
   <div class="spot-grid">
-
     <article class="spot reveal" data-delay="1">
-      <div class="spot-tag">Latest / 2026-04</div>
+      <div class="spot-tag" data-i18n="spot1.tag">Latest / 2026-04</div>
       <h3 class="spot-name">Stock<span class="ital">Agent</span></h3>
-      <p class="spot-desc">
-        A background agent that watches equities on a schedule, logs refreshes,
-        and surfaces the last refresh on a simple dashboard. Python with a
-        systemd-style scheduler.
-      </p>
+      <p class="spot-desc" data-i18n="spot1.desc">A background agent that watches equities on a schedule.</p>
       <div class="spot-meta">
         <span><span class="val">Python</span></span>
         <span>149 KB</span>
       </div>
       <div class="spot-links">
-        <a href="https://github.com/MarcVo00/StockAgent" target="_blank" rel="noopener">Repo &#x2197;</a>
+        <a href="https://github.com/MarcVo00/StockAgent" target="_blank" rel="noopener">
+          <span data-i18n="spot1.link">Repo</span> &#x2197;
+        </a>
       </div>
     </article>
 
     <article class="spot reveal" data-delay="2">
-      <div class="spot-tag">Agents / 2026-04</div>
+      <div class="spot-tag" data-i18n="spot2.tag">Agents / 2026-04</div>
       <h3 class="spot-name">Gemma<span class="ital">Agent</span></h3>
-      <p class="spot-desc">
-        An HTML-forward experiment wiring a small language model into the page
-        itself &mdash; part UI sketch, part local inference test-bed.
-      </p>
+      <p class="spot-desc" data-i18n="spot2.desc">An HTML-forward experiment wiring a small language model into the page.</p>
       <div class="spot-meta">
         <span><span class="val">HTML</span></span>
         <span>372 KB</span>
       </div>
       <div class="spot-links">
-        <a href="https://github.com/MarcVo00/GemmaAgent" target="_blank" rel="noopener">Repo &#x2197;</a>
+        <a href="https://github.com/MarcVo00/GemmaAgent" target="_blank" rel="noopener">
+          <span data-i18n="spot2.link">Repo</span> &#x2197;
+        </a>
       </div>
     </article>
 
     <article class="spot reveal" data-delay="3">
-      <div class="spot-tag">Live / 2024</div>
+      <div class="spot-tag" data-i18n="spot3.tag">Live / 2024</div>
       <h3 class="spot-name">Sel<span class="ital">Gestion</span></h3>
-      <p class="spot-desc">
-        The largest project in the archive. A methodology-selection tool for
-        project management &mdash; the only repo currently deployed to the web.
-      </p>
+      <p class="spot-desc" data-i18n="spot3.desc">The largest project in the archive. A methodology-selection tool deployed live.</p>
       <div class="spot-meta">
         <span><span class="val">JavaScript</span></span>
         <span>~93 MB</span>
       </div>
       <div class="spot-links">
-        <a href="https://github.com/MarcVo00/selGestionApp" target="_blank" rel="noopener">Repo &#x2197;</a>
-        <a class="live"
-           href="https://selection-optimale-methodologie-gestion-projet-app.vercel.app"
-           target="_blank" rel="noopener">Live &#x2197;</a>
+        <a href="https://github.com/MarcVo00/selGestionApp" target="_blank" rel="noopener">
+          <span data-i18n="spot3.link.repo">Repo</span> &#x2197;
+        </a>
+        <a class="live" href="https://selection-optimale-methodologie-gestion-projet-app.vercel.app" target="_blank" rel="noopener">
+          <span data-i18n="spot3.link.live">Live</span> &#x2197;
+        </a>
       </div>
     </article>
-
   </div>
 </section>
 
 <!-- ============================================================
-     LANGUAGES
+     003 — LANGUAGES
 ============================================================ -->
 <section id="stack" class="section wrap">
   <div class="section-head reveal">
-    <div class="section-index"><span class="num">003</span> Breakdown</div>
+    <div class="section-index" data-i18n="s003.index"><span class="num">003</span> Breakdown</div>
     <div>
-      <h2 class="section-title">
-        A four-language <span class="italic">palette</span>
-      </h2>
-      <p class="section-lede">
-        Mostly Python for agents and back-ends, TypeScript for modern web
-        apps, JavaScript for quick prototypes, HTML for sketches. The shape
-        of someone who moves between research and interface.
-      </p>
+      <h2 class="section-title" data-i18n="s003.title">A four-language <span class="italic">palette</span></h2>
+      <p class="section-lede" data-i18n="s003.lede">Mostly Python for agents and back-ends.</p>
     </div>
   </div>
 
-  <div class="lang-grid reveal" id="lang-grid">
-    <!-- populated by app.js -->
-  </div>
+  <!-- populated by render.js -->
+  <div class="lang-grid reveal" id="lang-grid"></div>
 </section>
 
 <!-- ============================================================
-     ARCHIVE
+     004 — ARCHIVE
 ============================================================ -->
 <section id="archive" class="section wrap">
   <div class="section-head reveal">
-    <div class="section-index"><span class="num">004</span> Archive</div>
+    <div class="section-index" data-i18n="s004.index"><span class="num">004</span> Archive</div>
     <div>
-      <h2 class="section-title">
-        The complete <span class="italic">index</span>
-      </h2>
-      <p class="section-lede">
-        Every public repository, most recent first. Click a row to open it on
-        GitHub. Data refreshes live from the GitHub API on every page load.
-      </p>
+      <h2 class="section-title" data-i18n="s004.title">The complete <span class="italic">index</span></h2>
+      <p class="section-lede" data-i18n="s004.lede">Every public repository, most recent first.</p>
     </div>
   </div>
 
   <div class="idx-table reveal">
-    <div class="idx-head">
-      <div>No.</div>
-      <div>Project</div>
-      <div>Note</div>
-      <div>Lang</div>
-      <div>Updated</div>
-      <div></div>
-    </div>
-    <div id="idx-body">
-      <!-- populated by app.js -->
-    </div>
+    <!-- header + rows populated by render.js -->
+    <div class="idx-head" id="idx-head"></div>
+    <div id="idx-body"></div>
   </div>
 </section>
 
 <!-- ============================================================
-     ABOUT
+     005 — ABOUT
 ============================================================ -->
 <section id="about" class="section wrap">
   <div class="section-head reveal">
-    <div class="section-index"><span class="num">005</span> About</div>
+    <div class="section-index" data-i18n="s005.index"><span class="num">005</span> About</div>
     <div>
-      <h2 class="section-title">
-        The <span class="italic">person</span> behind the handle
-      </h2>
+      <h2 class="section-title" data-i18n="s005.title">The <span class="italic">person</span> behind the handle</h2>
     </div>
   </div>
 
   <div class="about-grid">
-
     <figure class="about-portrait reveal" data-delay="1">
       <img src="https://avatars.githubusercontent.com/u/71267198?v=4"
-           alt="MarcVo portrait"
-           width="400" height="533" />
+           alt="MarcVo portrait" width="400" height="533" />
       <figcaption class="about-portrait-overlay">
         <span>MarcVo00</span>
         <span>&#x2197; github</span>
@@ -278,49 +253,45 @@
     </figure>
 
     <div class="about-body reveal" data-delay="2">
-      <p class="lede">
-        Marc is a developer drawn to <em>quiet automation</em> &mdash; small
-        programs that watch something, think a little, and tell you only
-        what matters.
+      <!-- #about-bio is replaced by the live GitHub bio via render.js -->
+      <p class="lede" id="about-bio" data-i18n="about.p1">
+        Marc is a developer drawn to <em>quiet automation</em> &mdash; small programs that watch something, think a little, and tell you only what matters.
       </p>
-      <p>
-        The archive reads like a <em>Wunderkammer</em>: a methodology
-        selector from his HEG years, a trading-card app, a Naruto tower
-        defense in the browser, a tea circle prototype &mdash; and, most
-        recently, a run of agents built on top of Gemma and market data.
+      <p data-i18n="about.p2">
+        The archive reads like a <em>Wunderkammer</em>.
       </p>
-      <p style="font-size:15px; color:var(--ink-dim); font-family:var(--mono); line-height:1.7;">
-        No bio on GitHub yet. That feels deliberate. The work&rsquo;s the bio.
+      <p style="font-size:15px; color:var(--ink-dim); font-family:var(--mono); line-height:1.7;"
+         data-i18n="about.p3">
+        The GitHub bio just arrived. Before that, the silence felt deliberate.
       </p>
 
       <dl class="kv-grid">
         <div class="kv">
-          <span class="k">Public repos</span>
+          <span class="k" data-i18n="kv.repos">Public repos</span>
           <span class="v">10 <small>&amp; counting</small></span>
         </div>
         <div class="kv">
-          <span class="k">Languages</span>
+          <span class="k" data-i18n="kv.langs">Languages</span>
           <span class="v">4</span>
         </div>
         <div class="kv">
-          <span class="k">On GitHub since</span>
+          <span class="k" data-i18n="kv.since">On GitHub since</span>
           <span class="v">2020 <small>Sep</small></span>
         </div>
         <div class="kv">
-          <span class="k">Most active month</span>
+          <span class="k" data-i18n="kv.active">Most active month</span>
           <span class="v">Apr 2026 <small>6 pushes</small></span>
         </div>
         <div class="kv">
-          <span class="k">Live deployments</span>
-          <span class="v">1 <small>on Vercel</small></span>
+          <span class="k" data-i18n="kv.live">Live deployments</span>
+          <span class="v">1 <small>Vercel</small></span>
         </div>
         <div class="kv">
-          <span class="k">Pattern emerging</span>
-          <span class="v">Agents <small>AI-adjacent</small></span>
+          <span class="k" data-i18n="kv.pattern">Pattern emerging</span>
+          <span class="v">Agents <small>AI</small></span>
         </div>
       </dl>
     </div>
-
   </div>
 </section>
 
@@ -332,29 +303,26 @@
 
   <div class="foot-grid">
     <div class="foot-col">
-      <h4>Colophon</h4>
-      <p class="foot-sig">
-        Set in Fraunces (variable serif) and JetBrains Mono. Data pulled live
-        from the public GitHub API on every page load, with a static fallback
-        so the site works offline.
+      <h4 data-i18n="foot.col.colophon">Colophon</h4>
+      <p class="foot-sig" data-i18n="foot.sig">
+        Set in Fraunces and JetBrains Mono. Data pulled live from the GitHub API on every load.
       </p>
     </div>
     <div class="foot-col">
-      <h4>Elsewhere</h4>
+      <h4 data-i18n="foot.col.elsewhere">Elsewhere</h4>
       <a href="https://github.com/MarcVo00" target="_blank" rel="noopener">GitHub &#x2197;</a>
-      <a href="https://selection-optimale-methodologie-gestion-projet-app.vercel.app"
-         target="_blank" rel="noopener">Live demo &#x2197;</a>
+      <a href="https://selection-optimale-methodologie-gestion-projet-app.vercel.app" target="_blank" rel="noopener">selGestionApp &#x2197;</a>
     </div>
     <div class="foot-col">
-      <h4>Index</h4>
-      <a href="#work">002 Spotlight</a>
-      <a href="#stack">003 Stack</a>
-      <a href="#archive">004 Archive</a>
-      <a href="#about">005 About</a>
+      <h4 data-i18n="foot.col.index">Index</h4>
+      <a href="#work"    data-i18n="nav.work">Work</a>
+      <a href="#stack"   data-i18n="nav.stack">Stack</a>
+      <a href="#archive" data-i18n="nav.archive">Archive</a>
+      <a href="#about"   data-i18n="nav.about">About</a>
     </div>
     <div class="foot-col">
-      <h4>Meta</h4>
-      <a href="#top">&uarr; Back to top</a>
+      <h4 data-i18n="foot.col.meta">Meta</h4>
+      <a href="#top" data-i18n="foot.top">&uarr; Back to top</a>
       <span style="display:block; padding:5px 0; color:var(--ink-faint); font-size:13px;">
         v. <span data-year="">2026</span>.1
       </span>
@@ -362,11 +330,16 @@
   </div>
 
   <div class="foot-bottom">
-    <div>&copy; <span data-year="">2026</span> Marc Vo &mdash; All experiments own themselves.</div>
-    <div>Pulled from github.com/MarcVo00 &mdash; <span id="fetchstamp">static snapshot</span></div>
+    <div>&copy; <span data-year="">2026</span> <span data-i18n="foot.copy">Marc Vo &mdash; All experiments own themselves.</span></div>
+    <div><span id="fetchstamp">static snapshot</span></div>
   </div>
 </footer>
 
-<script src="app.js"></script>
+<!-- JS — order matters: data → translations → render → main -->
+<script src="js/data.js"></script>
+<script src="js/translations.js"></script>
+<script src="js/render.js"></script>
+<script src="js/main.js"></script>
+
 </body>
 </html>

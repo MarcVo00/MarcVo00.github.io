@@ -1,0 +1,76 @@
+/* ================================================================
+   footer.css — site footer
+================================================================ */
+
+.foot {
+  padding: 80px 0 40px;
+  border-top: 1px solid var(--line);
+  position: relative;
+}
+
+/* oversized italic wordmark */
+.foot-mark {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(80px, 18vw, 280px);
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  color: var(--ink);
+  margin: 0 0 60px;
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.foot-mark span { color: var(--amber); }
+
+/* four-column grid */
+.foot-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
+}
+@media (min-width: 720px) {
+  .foot-grid { grid-template-columns: 2fr 1fr 1fr 1fr; }
+}
+
+.foot-col h4 {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 16px;
+  font-weight: 500;
+}
+.foot-col a {
+  display: block;
+  padding: 5px 0;
+  color: var(--ink-dim);
+  font-size: 13px;
+  transition: color .2s, padding .2s;
+}
+.foot-col a:hover { color: var(--amber); padding-left: 6px; }
+
+.foot-sig {
+  font-size: 11px;
+  color: var(--ink-dim);
+  line-height: 1.7;
+  max-width: 44ch;
+}
+
+/* bottom bar */
+.foot-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  padding-top: 60px;
+  margin-top: 60px;
+  border-top: 1px solid var(--line);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}

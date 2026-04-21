@@ -1,0 +1,119 @@
+/* ================================================================
+   spotlight.css — featured project cards (section 002)
+================================================================ */
+
+.spot-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 900px) {
+  .spot-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.spot {
+  position: relative;
+  padding: 32px 28px 28px;
+  border: 1px solid var(--line);
+  background: var(--bg-card);
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+  overflow: hidden;
+  transition:
+    transform .4s cubic-bezier(.2,.7,.2,1),
+    border-color .3s ease,
+    background .3s ease;
+}
+
+/* animated corner brackets on hover */
+.spot::before {
+  content: "";
+  position: absolute; top: 0; left: 0;
+  width: 40px; height: 40px;
+  border-top: 1px solid var(--amber);
+  border-left: 1px solid var(--amber);
+  opacity: 0;
+  transition: opacity .4s ease, width .4s ease, height .4s ease;
+}
+.spot::after {
+  content: "";
+  position: absolute; bottom: 0; right: 0;
+  width: 40px; height: 40px;
+  border-bottom: 1px solid var(--amber);
+  border-right: 1px solid var(--amber);
+  opacity: 0;
+  transition: opacity .4s ease, width .4s ease, height .4s ease;
+}
+.spot:hover {
+  border-color: var(--line-hi);
+  transform: translateY(-4px);
+  background: var(--bg-elev);
+}
+.spot:hover::before,
+.spot:hover::after { opacity: 1; width: 60px; height: 60px; }
+
+.spot-tag {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.spot-tag::before { content: ""; width: 16px; height: 1px; background: var(--amber); }
+
+.spot-name {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: 34px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 16px;
+  font-variation-settings: "opsz" 144, "SOFT" 60, "WONK" 0;
+}
+.spot-name .ital {
+  font-style: italic;
+  color: var(--amber);
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+}
+
+.spot-desc {
+  color: var(--ink-dim);
+  font-size: 13px;
+  line-height: 1.65;
+  margin: 0 0 24px;
+  flex-grow: 1;
+}
+
+.spot-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  font-size: 11px;
+  color: var(--ink-faint);
+  padding-top: 20px;
+  border-top: 1px dashed var(--line);
+  margin-bottom: 20px;
+}
+.spot-meta .val { color: var(--ink); }
+
+.spot-links {
+  display: flex;
+  gap: 14px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.spot-links a {
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink-faint);
+  padding-bottom: 2px;
+  transition: color .2s, border-color .2s;
+}
+.spot-links a:hover { color: var(--amber); border-color: var(--amber); }
+.spot-links a.live { color: var(--sage); border-color: var(--sage); }
+.spot-links a.live:hover { opacity: 0.8; }

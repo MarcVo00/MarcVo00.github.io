@@ -1,0 +1,104 @@
+/* ================================================================
+   nav.css — sticky navigation bar + lang toggle
+================================================================ */
+
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 32px;
+  height: 60px;
+  padding: 0 var(--edge);
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+
+/* ---- brand ---- */
+.brand {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-style: italic;
+  font-size: 26px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1;
+  font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+}
+.brand em { color: var(--amber); font-style: italic; }
+
+/* ---- nav links ---- */
+.navlinks {
+  display: flex;
+  gap: 28px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ink-dim);
+  justify-self: center;
+}
+.navlinks a {
+  position: relative;
+  padding: 4px 0;
+  transition: color .2s ease;
+}
+.navlinks a::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 100%; bottom: 0;
+  height: 1px;
+  background: var(--amber);
+  transition: right .35s cubic-bezier(.2,.7,.2,1);
+}
+.navlinks a:hover { color: var(--ink); }
+.navlinks a:hover::after { right: 0; }
+
+/* ---- right meta: lang toggle + clock ---- */
+.nav-meta {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  font-size: 11px;
+  color: var(--ink-dim);
+  letter-spacing: 0.06em;
+}
+
+.dot {
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--sage);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--sage) 60%, transparent);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+/* ---- language toggle ---- */
+.lang-toggle {
+  display: flex;
+  gap: 2px;
+  border: 1px solid var(--line-hi);
+  padding: 3px;
+  border-radius: 2px;
+}
+.lang-btn {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border: none;
+  background: transparent;
+  color: var(--ink-dim);
+  cursor: pointer;
+  transition: background .2s, color .2s;
+  border-radius: 1px;
+}
+.lang-btn.active { background: var(--amber); color: var(--bg); }
+.lang-btn:not(.active):hover { color: var(--ink); }
